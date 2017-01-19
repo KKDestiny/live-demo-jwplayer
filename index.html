@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>直播Demo</title>
+	
+	<script src="js/jwplayer.js"></script>
+
+  </head>
+  <body>
+    <h1>开始直播</h1>
+	
+	<!- 放置播放器 ->
+	<div id="mediaspace">
+		播放器
+	</div>
+	
+	<script>
+		// 实例化
+		var OL_Player = jwplayer('mediaspace').setup({
+			'flashplayer': 'js/player.swf',	// 将这个文件拷贝到jwplayer.js同级目录下即可
+			'file': 'test',	// 直播室名称
+			'streamer': 'rtmp://127.0.0.1:1935',
+			'controlbar': 'bottom',
+			'width': '848',
+			'height': '360'
+		});
+
+		// 自动播放
+		OL_Player.play();
+	</script>
+	
+  </body>
+</html>
